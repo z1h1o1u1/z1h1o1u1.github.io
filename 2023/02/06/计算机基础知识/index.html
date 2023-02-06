@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="zhouluo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="基础知识计算机结构在学习计算机结构时可以以一下为中心进行学习  CPU 数据保存设备 周边设备 系统总线  CPUCPU主要由ALU(Arithmetic Logic Unit，算术&#x2F;逻辑单元)CU(Control Unit，控制单元)寄存器组(Register Set)、总线接口(Bus Interface)组成。  ALU用于执行加减乘除、AND、OR、NOT等各种算术运算与逻辑运算。CU从输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机基础知识">
+<meta property="og:url" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="zhou&#39;s blog">
+<meta property="og:description" content="基础知识计算机结构在学习计算机结构时可以以一下为中心进行学习  CPU 数据保存设备 周边设备 系统总线  CPUCPU主要由ALU(Arithmetic Logic Unit，算术&#x2F;逻辑单元)CU(Control Unit，控制单元)寄存器组(Register Set)、总线接口(Bus Interface)组成。  ALU用于执行加减乘除、AND、OR、NOT等各种算术运算与逻辑运算。CU从输">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/31.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/32.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/33.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/34.jpg">
+<meta property="og:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/35.jpg">
+<meta property="article:published_time" content="2023-02-06T06:55:45.000Z">
+<meta property="article:modified_time" content="2023-02-06T07:38:16.093Z">
+<meta property="article:author" content="zhouluo">
+<meta property="article:tag" content="计算机基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://z1h1o1u1.github.io/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>计算机基础知识 - zhou&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"z1h1o1u1.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zhou&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="计算机基础知识"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-06 14:55" pubdate>
+          February 6, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机基础知识</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="计算机结构"><a href="#计算机结构" class="headerlink" title="计算机结构"></a>计算机结构</h2><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.jpg" srcset="/img/loading.gif" lazyload alt="jiegou"><br>在学习计算机结构时可以以一下为中心进行学习</p>
+<ul>
+<li>CPU</li>
+<li>数据保存设备</li>
+<li>周边设备</li>
+<li>系统总线</li>
+</ul>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>CPU主要由ALU(Arithmetic Logic Unit，算术/逻辑单元)CU(Control Unit，控制单元)寄存器组(Register Set)、总线接口(Bus Interface)组成。<br><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.jpg" srcset="/img/loading.gif" lazyload alt="CPU"></p>
+<ol>
+<li>ALU用于执行加减乘除、AND、OR、NOT等各种算术运算与逻辑运算。CU从输人寄存器获取数据，决定 ALU 执行运算的类型。此外，如何确定运算结果也由 CU 决定。  </li>
+<li>CU 从存储器取出命令，并对命令进行解析，然后发送控制信号，控制各设备工作。CU 既可以通过组合逻辑单元由硬件实现，也可以通过编写程序使用软件实现。  </li>
+<li>寄存器是CPU内部集成的高速小型保存器，一般用于保存当前计算中的值。大部分CPU会将数据从主存转移到寄存器，完成处理后再保存到内存。寄存器处于运算的中心位置。</li>
+</ol>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>ٖ内存 (Memory)是计算机中最重要的部件之一，它是程序与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，其作用是存放CPU 中的运算数据，以及与硬盘等外部存储设备交换的数据。<br><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.jpg" srcset="/img/loading.gif" lazyload alt="neicun"><br>一般而言，计算机中使用的内存可以分为 ROM与RAM两种。</p>
+<ul>
+<li>ROM是一种非挥发性内存，用于保存有关计算机启动时的设备检查与从HDD加载引导程序(Bootstrap)的基本信息。  </li>
+<li>RAM是计算机运行中使用的内存，进程使用的数据就保存于此。RAM是一种高速的挥发性保存设备只在电源接通时才能保存数据。<br>运行应用程序前，必须先将 HDD 中的数据加载到内存。由于内存容量有限，且同时供多个进程使用，所以会出现内存不足的问题。此时可以将 HDD的一部分空间用作虚拟内存，以弥补内存空间的不足，这种技术称为虚拟内存技术。<br>CPU内部含有高速寄存器。CPU执行运算前，需要先将命令与数据从内存读入寄存器，这<br>样能够大大提高访问速度。从CPU 角度看，访问内存并从指定地址读取数据要付出较高代价(时间)。因此，为了提升性能，CPU 内部或外部设置有高速缓存。系统会将常用数据放人高速缓存，以提升数据访问性能。SRAM是最常用的高速缓存。</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.jpg" srcset="/img/loading.gif" lazyload alt="xitong"><br>计算机运行过程中，操作系统处于最核心的地位。从软件层面看，操作系统管理进程的创建与销毁，支持进程同步与调度。还提供基于虚拟内存的内存管理技术，管理文件系统以使用计算机中的文件与目录。从硬件层面看，操作系统管理键盘、鼠标、显示器等多种周边设备的工作，也负责管理CPU。智能手机是一种在移动环境中使用的计算机，其操作系统管理相机、电子罗盘、GPS等多种传感器。<br>操作系统还提供错误检测与处理功能，以保证应用程序正常运行，确保其行为的一致性。比如，程序在正常运行过程中异常终止时，Windows操作系统就会弹出错误信息。此外，为了维护系统安全，操作系统还提供访问、管理资源以及安全认证等功能。</p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.jpg" srcset="/img/loading.gif" lazyload alt="xitong2"></p>
+<p>进程是指磁盘中的程序被装入内存并接受操作系统控制的状态。简言之，进程就是处于运行中的程序。磁盘中的程序要想运行，必须先转变为进程。进程占用一定内存，并通过CPU执行指定操作，有时也需要使用系统中的文件与I/O资源。操作系统提供的核心功能之一就是为进程分配与释放资源。资源分配与释放的效率是衡量操作系统性能与安全性的重要指标。<br>进程以PCB ( Process Control Block，进程控制块）形式表示，PCB随进程的创建而建立，伴随进程运行的整个过程，直到进程销毁而销毁。PCB是由操作系统管理的一种数据结构，包含进程ID、进程状态、程序计数、CPU寄存器、CPU调度信息、内存管理信息、账户信息、输人输出状态信息等。<br>进程占用CPU执行相应任务。运算所需数据从内存读入CPU内部的寄存器。分配给进程的CPU时间片耗尽时，进程就会进行上下文切换，将CPU资源让给其他进程使用。上下文切换过程中，寄存器中的数据会被保存到PCB，这样进程再次取得CPU的使用权时，就可以将这些数据恢复到寄存器继续运行。</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>进程运行时，操作系统为其分配内存并进行管理。特别是在多进程环境中，操作系统必须保证各进程拥有独立的内存空间。从进程运行的观点看，内存管理可以分为</p>
+<ol>
+<li>虚拟内存管理功能</li>
+<li>进程内存分配功能。<br><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.jpg" srcset="/img/loading.gif" lazyload alt="xitong3"><br>首先了解虚拟内存管理功能。如前所述，程序运行时需要先将数据装入内存。此时若物理内存不足，则操作系统会将一部分硬盘空间虚拟用作内存。虚拟内存技术下，大量数据会在主保存器（内存）与辅助保存器（硬盘）之间频繁交换。由于通过地址指定并管理各种数据会付出大量代价，所以操作系统以页面为单位进行管理，页面是使用固定大小的页帧在内存中划分的。<br>虚拟内存技术中，主保存器与辅助保存器虚拟绑定，看起来就像是在使用同一块内存一样。要做到“无中生有”，必须使用各种管理技术。</li>
+<li>载入技术:决定何时从辅助保存器中将数据载入主保存器。</li>
+<li>配置技术:决定将页面加载到主保存器的哪部分。</li>
+<li>替换技术:主保存器中已经加载所有页面时，决定将哪些页面换出到辅助保存器。</li>
+<li>分配技术:决定为进程分配的主保存器空间大小。<br><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.jpg" srcset="/img/loading.gif" lazyload alt="xitong4"><br>当程序运行，即从静态代码变为动态进程时，操作系统在虚拟内存区域中只为进程分配空间，用于保存进程运行所需的程序源代码，以及运行时出现的各种形式的数据。一般而言，分配给进程的内存分为代码区、数据区、BSS区、堆区域、栈区域这五部分，各区域具有不同功能。</li>
+</ol>
+<ul>
+<li>代码区:该区域包含组成可执行文件的各种命令，保存着函数、控制语句、常数等，它们在进程创建时保存一次，直到进程销毁。代码区为只读区域，不可执行写入操作。</li>
+<li>数据与BSS区域:这两个区域保存着全局变量、静态变量、数组、结构体等。在进程创建时分配空间，进程运行时存入值。这两个区域都是可读写的。</li>
+<li>堆区域:该区域是事先预约的空间，供进程运行时使用。程序员调用API可以分配任意大小内存。一般调用malloc()或calloc()函数进行分配，调用free()函数进行释放。</li>
+<li>栈区域:栈区域是程序自动使用的临时内存区域，用于保存局部变量的值，在函数调用时分配，函数退出时返还。堆与栈内存分配于相同空间。堆从低地址到高地址分配内存，栈从高地址向低地址分配内存，它们是系统黑客攻击的主要目标。在main()函数中，按照参数、返回地址、帧指针、局部变量序压入栈。</li>
+<li><h2 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h2></li>
+</ul>
+<p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.jpg" srcset="/img/loading.gif" lazyload alt="yingyong1"></p>
+<p>从编译器分类看，编程语言分为两种，一种是编译型语言，另一种是解释型语言。编译型语言经过编译器一次编译即可全部转换为目标代码。转换时，分析与优化同时进行，具有执行速度快的优点。解释型语言解析一行，代码即执行一行，执行速度相对较慢，但易于调试，可独立于操作系统进行开发。两种语言的共同点是，都需要将源代码转换为机器代码才能运行。Java语言同时具有上述两种特征，即编译时先将源代码转换为字节码，运行时再逐行解释执行。</p>
+<h3 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h3><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/31.jpg" srcset="/img/loading.gif" lazyload alt="yingyong2"></p>
+<p>下面以编译型语言为例进行介绍。编译器用于将源代码转换为目标代码，此过程中并非只进行简单转换，还要对代码进行并行化处理，以便在多核环境中优化。此外还要分析代码，显示代码中的错误信息。一般而言，目标代码是汇编代码。汇编代码以人类易读的形式表示机器代码，它与机器代码是一一对应的。编译完成后，用户即可运行程序。用户双击可执行文件时，操作系统会将其加载到内存，并连接需要的DLL与库。如前所述，运行程序时，程序数据会被加载到代码、数据、BSS 区域，并分配运行所需的堆区域与栈区域。</p>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>计算机网络是一个复杂且庞大的知识框架，需进行阅读专业书籍认真学习！<br>计算机网络是指，通过通信线路连接多台计算机，实现资源共享与信息传递的计算机系统。计算机之间进行通信需要使用线缆、中继器、交换机、路由器等硬件设备，这些设备要正常工作则需要使用识别符、传输协议、路由等技术。</p>
+<ol>
+<li>识别符（ldentifier ):现实中，可以通过姓名或身份证号码识别区分每个人。与之类似，计算机也需要一种手段标识自己。最基本的是使用Mac地址，它是LAN卡分配的号码,是生产过程中由厂家烧入网卡的全球唯一编号。IP地址是识别每台计算机的逻辑单位。目前使用的IPv4协议中，IP地址由32位组成。进程是计算机内部的通信主体，它借助端口号识别。从通信观点看，端口技术实现了多个进程共享一个IP地址的目标。像这样，计算机通过MAC、IP、端口三种识别符相互识别并交换数据。</li>
+<li>传输协议（Protocol ):计算机传送数据时，会将对方的地址、端口号、错误检查所需的各种信息一起发送。只有组成通信系统的交换机、路由器等设备知道所有信息后，才能将数据安全传送到目的地。首先，有必要制定关于传送数据的长度与哪种信息在哪个位置的详细规则。然后，设备制造商与程序开发人员必须根据这些规则生产与分析数据，这些规则就是通信协议。人们根据不同使用目的开发了多种协议，并一直在使用。</li>
+<li>路由( Routing ):路由技术用于从数千万台计算机中找到自己想通信的计算机，并使找到的路径最快、最安全。路由由路由协议与路由器组成。目前有多种路由，请根据规模与预算选择使用。</li>
+</ol>
+<h3 id="角度"><a href="#角度" class="headerlink" title="角度"></a>角度</h3><table>
+<thead>
+<tr>
+<th align="center">角度</th>
+<th align="center">1.构成角度</th>
+<th align="center">2.服务角度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">设备：与网络相连的计算机常称为主机(host)=端系统end system,</td>
+<td align="center">运行的网络应用程序分布式的应用进程，如：Web,email,电子商务,</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">通信链路：光纤，同轴电缆，传输速率：带宽bps</td>
+<td align="center">为分布式的应用进程提供通讯服务的基础设施（为app提供通讯服务）</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">分组交换设备eg:路由器，交换机</td>
+<td align="center">为app应用提供服务分为无连接不可靠服务，面向连接的可靠服务</td>
+</tr>
+</tbody></table>
+<h3 id="互联网的三个阶段"><a href="#互联网的三个阶段" class="headerlink" title="互联网的三个阶段"></a>互联网的三个阶段</h3><blockquote>
+<p>第一个阶段APPANET开发互联网，以TCP/IP协议族作为通讯规则</p>
+<blockquote>
+<p>第二阶段1985年NSF构成三级结构互联网</p>
+<blockquote>
+<p>第三阶段逐渐形成多层ISP结构互联网如，联通，电信也叫做internet服务提供商</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h3><p>上一篇笔记</p>
+<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>TCP/IP是世界范围内广泛使用的协议族。虽然它不像OSI七层模型那样是一种标准，但业界已经将其视为标准，被称为事实上(De facto）的通信协议。TCP/IP协议大致分为4层，类似于OSI七层模型，各层的功能划分也非常明确。TCP/IP协议各层功能与OSI七层模型大体一致，不再赘述。下面对具有代表性的几个协议进行讲解。<br><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/32.jpg" srcset="/img/loading.gif" lazyload alt="wangluo1"></p>
+<ol>
+<li>远程登录（ Telnet )<br>Telnet协议支持用户使用终端登录远程计算机，为用户提供了在本地计算机完成远程主机工作的能力。在使用网络方面，终端与仿真程序不同。由于传送的数据未经加密处理，为了保证数据安全，目前大量使用SSH协议。</li>
+<li>FTP ( File Transfer Protocol )<br>FTP用于通过网络传送大体积文件，其使用简单、数据传输速度快，故而得到广泛应用。但由于传送的数据，尤其认证时使用的ID与密码都是明文形式，所以存在诸多安全隐患。需要确保传输安全时，应当使用SFTP ( Secure FTP)协议。</li>
+<li>TCP ( Transmission Control Protocol )<br>TCP传输控制协议为网络中的计算机提供了安全、有序、无差错的数据传输服务。TCP是面向连接的协议，它保证交换数据的两台计算机在逻辑上总是连接状态。由于TCP总是与IP成对使用，所以将其统称为TCP/IP，代表TCP协议与IP协议的组合。为了解决三次握手过程中发生的性能低下与安全问题，人们开发了SCTP ( Stream Control TransmissionProtocol)协议。可靠</li>
+<li>UDP ( User Datagram Protocol )<br>与TCP协议类似，UDP协议也用于在计算机之间传送数据。不同的是，它并不保证通信双方之间总存在逻辑连接。一般而言，发送方只负责发送数据，并不支持顺序控制、错误控制等安全机制。UDP协议使用简单，且支持快速传输数据。在稳定的网络环境中，使用UDP比 TCP更有利。不可靠</li>
+<li>IP ( lnternet Protocol )<br>IP协议以IPv4地址系统为基础，将数据包通过网络传送至目的地。IPv4支持32位网络地址。由于目前对IP地址提出需求的设备呈现几何增长，相信基于64位地址的IPv6很快就会取代IPv4。出于安全考虑，IPv6本身就支持IPSec，大大提高了网络通信的安全性。 </li>
+<li>ARP (Address Resolution Protocol )<br>ARP协议从逻辑地址（IP）获取相应物理地址（MAC)，在计算机交换数据包时，需要知道通信双方的物理地址。通常，我们熟知的基于32位的IP地址 （ ex:210.53.26.123）是供人类而非计算机识别的逻辑地址。计算机识别物理地址，即 MAC地址（ ex: 00-1D-7D-9A-BB-62)。ARP协议用于将逻辑地址（IP)变换为物理地址（MAC)。而RARP ( ReverseARP)协议则用于根据物理地址获取相应的逻辑地址。</li>
+<li>ICMP ( Internet Control Message Protocol )<br>IP协议缺少错误控制功能，为了弥补这一不足，人们设计了ICMP协议。借助ICMP协议，路由器可以传送IP包处理过程中发生的错误信息，网络管理员也可以用其向路由器或其他计算机请求获取特定信息。</li>
+</ol>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/33.jpg" srcset="/img/loading.gif" lazyload alt="wangluo2"><br>DNS将人们易于理解的域名变换为网络中使用的识别符（IP)。与IP类似，域名也由国际机构统一管理，各国都有域名注册代理机构。同一域名可以映射多个IP地址。分配给服务设备的IP地址发生改动时，只要更改DNS中的IP地址，即可一次性应用于全球所有系统。使用域名不仅能加深人们对服务的理解，也能大大方便人们连接并使用互联网。<br>比如，在浏览器地址栏输人网址 后，程序首先会在系统的hosts文件中搜索已有的域名与IP地址。假设查找到记录为140.100.90.9 则浏览器会将140.100.90.9识别为IP地址，并进行连接请求Web服务。hosts文件通常只用于测试，浏览器一般会在第一层DNS 中查找域名对应的IP地址。一个全新的域名可能不存在于第一层DNS，此时第一层DNS 会向第二层DNS发送目录更新请求，更新自身数据库后，将相关IP地址发送给用户PC</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.jpg" srcset="/img/loading.gif" lazyload alt="wangluo3"><br>可以将网络简单理解为数千万台计算机通过数十万台路由器连接的系统。路由用于确定数据经由哪些路由器可以最快速度到达目的地。各台路由器通过与邻近路由器交换信息维护最佳路径信息。路由协议用于在路由器之间共享路由信息，确保所有路由器知道通往其他路由器的路径。<br>用户PC 访问 Web服务时，首先要通过DNS服务器查找Web服务器的IP地址，然后决定走哪条路到达目的地。出发地是用户PC连接的本地路由器。本地路由器查找自身路由表，搞清目的路由器所在位置。若在自身路由表中查找不到与目的路由器有关的信息，则向邻近路由器询问。如此反复，最终找到一条到达目的地的最优路径，然后发送数据包。</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/34.jpg" srcset="/img/loading.gif" lazyload alt="web1"></p>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>浏览器向Web服务器请求服务时，会根据HTTP请求协议发送数据。HTTP请求协议由协议头与协议体组成，协议头含有方法类型、请求URL等服务处理所需的各种信息，而协议体则包含表单参数,与用户输入值对应。</p>
+<h3 id="Cookie与会话"><a href="#Cookie与会话" class="headerlink" title="Cookie与会话"></a>Cookie与会话</h3><p><img src="/2023/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/35.jpg" srcset="/img/loading.gif" lazyload alt="web1"></p>
+<p>Web技术提供了向浏览器保存数据的空间，称为Cookie。Web发展早期、用户认证信息大都保存在Cookie中，但由于存在安全隐患，目前人们只将简单的控制信息、会话ID信息保存于此。由于Cookie信息包含于HTTP协议头信息，所以可以将其用作在客户端与服务器之间传递信息的手段。会话是保存用户信息的Web服务器对象。一般而言，用户登录后，用户信息就会保存在会话之中，然后通过Cookie将会话ID(用于标识会话的识别符）传递给浏览器。用户通过浏览器访问购物车时，Web服务器会使用通过HTTP头传递的会话ID(位于Cookie)判断是否是认证用户。下面简单讲解基于会话的认证系统。<br>①创建会话:创建用于保存用户认证信息的会话。创建的会话由Web服务器管理，保存在 Web服<br>务器进程占用的内存中。<br>②传送会话ID:创建会话时，会同时创建用于标识会话的ID。为了判断相应客户端是否已经认证.<br>在 HTTP响应的 Set-Cookie字段一同传送会话ID。<br>③保存会话ID:浏览器从HTTP响应头提取会话ID并添加到Cookie。<br>④传送会话ID:请求服务时，浏览器会将所有Cookie 值放入HTTP请求头的Cookie字段，并进行<br>传送。当然，这其中也包含会话ID。<br>⑤识别会话:Web服务器分析HTTP头，从中提取会话ID。然后根据相应ID从自身会话列表提取<br>相应值,进行认证。</p>
+<p>本文整理参考《python黑客攻防入门》一书</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">#计算机基础</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>计算机基础知识</div>
+      <div>https://z1h1o1u1.github.io/2023/02/06/计算机基础知识/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>zhouluo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 6, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/05/OSI%E6%A8%A1%E5%9E%8B/" title="OSI模型">
+                        <span class="hidden-mobile">OSI模型</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
