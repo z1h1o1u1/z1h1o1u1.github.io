@@ -13,7 +13,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="zhouluo">
+  <meta name="author" content="Charon">
   <meta name="keywords" content="">
   
     <meta name="description" content="HexoHexo是一款基于Node.js的静态博客框架，可以方便的生成静态网页托管在GitHubu上，是搭建博客的首选框架。 step1：Node.jsHexo基于Node.js，所以点击下载Download | Node.js (nodejs.org)一路根据提示NEXT，然后在命令行中输入 1node -v 出现版本号意味着安装成功，然后在命令行换个镜像源，加个速 1npm config se">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://z1h1o1u1.github.io/img/3.jpg">
 <meta property="article:published_time" content="2023-02-10T05:01:09.000Z">
 <meta property="article:modified_time" content="2023-03-11T14:28:04.585Z">
-<meta property="article:author" content="zhouluo">
+<meta property="article:author" content="Charon">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://z1h1o1u1.github.io/img/3.jpg">
   
@@ -113,7 +113,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>zhou&#39;s blog</strong>
+      <strong>Charon&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -311,7 +311,7 @@
 <p>用户名和邮箱根据你注册github的信息输入<br>然后生成密钥SSH key：然后直接三个回车即可，默认不需要设置密码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;              &quot;</span><br></code></pre></td></tr></table></figure>
 <p>打开github在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code><br>将C:\Users\XXXXX.ssh文件夹中的id_rsa.pub密钥，将内容全部复制</p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a> ：<br>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。当你推送的时候，这样可以保证每次的推送都是正确合法的。</p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a> ：<br>这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。当你推送的时候，这样可以保证每次的推送都是正确合法的。</p>
 <p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。<br>修改最后一行的配置：冒号</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repository: <br>  branch: main<br></code></pre></td></tr></table></figure>
 <p>repository修改为你自己的github项目地址。<br><strong>注意</strong><br><strong>branch后面一定要根据自己的分支看看是main还是master</strong><br>以上其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，最后安装Git部署插件，在命令行里输入命令：</p>
@@ -349,7 +349,7 @@
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>zhouluo</div>
+          <div>Charon</div>
         </div>
       
       
